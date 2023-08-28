@@ -18,6 +18,7 @@ namespace ExampleWorkerService
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}" + _settings.Author, DateTimeOffset.Now);
+                _logger.LogWarning("Its alive" + _settings.Author, DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
             }
         }
